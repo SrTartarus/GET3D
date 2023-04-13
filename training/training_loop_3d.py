@@ -380,7 +380,7 @@ def training_loop(
             snapshot_data = dict(
                 G=G, D=D, G_ema=G_ema)
             for key, value in snapshot_data.items():
-                if isinstance(value, torch.nn.Module) and not isinstance(value, dr.ops.RasterizeGLContext):
+                if isinstance(value, torch.nn.Module) and not isinstance(value, dr.ops.RasterizeCudaContext):
                     if num_gpus > 1:
                         misc.check_ddp_consistency(value, ignore_regex=r'.*\.[^.]+_(avg|ema|ctx)')
                         for param in misc.params_and_buffers(value):
