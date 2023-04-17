@@ -26,14 +26,10 @@ dataset_folder = args.dataset_folder
 blender_root = args.blender_root
 
 synset_list = [
-    '02958343',  # Car
-    '03001627',  # Chair
-    '03790512'  # Motorbike
+    '03759954',
 ]
 scale_list = [
     0.9,
-    0.7,
-    0.9
 ]
 for synset, obj_scale in zip(synset_list, scale_list):
     file_list = sorted(os.listdir(os.path.join(dataset_folder, synset)))
